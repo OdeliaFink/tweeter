@@ -1,0 +1,11 @@
+header {
+  height: 400px;
+  width: 100%;
+  background-color: rgb(181, 235, 143);
+  background-color: #a0df6a;
+  background-image: url('https://www.transparenttextures.com/patterns/candyhole.png');
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
