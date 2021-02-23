@@ -29,6 +29,10 @@ textarea {
   color: #545149;
 }
 
+.counter-red {
+  color: red !important;
+}
+
 button {
   font-family: 'Bungee', sans-serif;
   color: #ffffff;
