@@ -5,11 +5,12 @@
 }
 
 textarea {
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
   font-size: 1.5em;
   color: #545149;
   background-color: #f4f1ec;
-  border: hidden;
+  border-style: none;
   border-bottom: 5px solid #545149;
   width: 50vw;
 }
