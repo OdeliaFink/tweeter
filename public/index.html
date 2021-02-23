@@ -43,8 +43,19 @@
     <!-- Page-specific (main) content here -->
     <main class="container"></main>
     <main class="container">
-      <h1>what are you humming about?</h1>
+      <h1>tweet away</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form>
+          <label for="tweet-text"></label>
+          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+          <div>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>      
     </main>
    </body>
  </html> 
