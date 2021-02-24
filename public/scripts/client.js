@@ -71,7 +71,6 @@ const createTweetElement = function (tweetData) {
 
 const renderTweets = function (tweets) {
   const container = $('.tweet-container').html('');
-  console.log(container);
   tweets.forEach((tweet) => {
     const tweetElement = createTweetElement(tweet);
     container.prepend(tweetElement);
@@ -80,3 +79,28 @@ const renderTweets = function (tweets) {
 
 $(document).ready(() => renderTweets(data));
 //once doc is loaded then render function
+
+$('form').on('submit', (event) => {
+  event.preventDefault();
+  console.log($('form').serialize());
+
+  $.ajax({
+    url: '/tweets',
+    method: 'POST',
+    data: $('form').serialize(),
+  }).then((res) => console.log(res));
+});
+
+const loadTweets = function () {
+  $.ajax({
+    url: '/tweets',
+    method: 'GET',
+    dataType: 'JSON',
+  })
+  .then((results) => {
+    console.log(results);
+    renderTweets(results);
+  });
+};
+
+loadTweets();
