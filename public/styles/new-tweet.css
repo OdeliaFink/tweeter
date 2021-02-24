@@ -30,7 +30,7 @@ textarea {
 }
 
 .counter-red {
-  color: red !important;
+  color: red;
 }
 
 button {

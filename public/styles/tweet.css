@@ -18,12 +18,21 @@
   align-items: center;
 }
 
+.user-header {
+  display: flex;
+  align-items: center;
+}
+
+.tweet {
+  border-style: solid;
+  padding: 10px;
+}
+
 .tweet:hover {
   border: solid rgb(71, 114, 216) 4px;
 }
 
 .tweet img {
-  margin: 5%;
   width: 95px;
 }
 
