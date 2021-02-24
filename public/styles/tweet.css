@@ -33,11 +33,12 @@
 }
 
 .tweet img {
-  width: 95px;
+  width: 40px;
 }
 
 .tweet h1 {
   font-weight: 300;
+  padding-left: 10px;
   color: #545149;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 1em;

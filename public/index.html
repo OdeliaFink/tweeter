@@ -26,7 +26,10 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script
+      type="text/javascript"
+      src="/scripts/composer-char-counter.js"
+    ></script>
   </head>
 
   <body>
@@ -49,35 +52,18 @@
         <h2>Compose Tweet</h2>
         <form action="/tweets" method="POST">
           <label for="tweet-text"></label>
-          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+          <textarea
+            name="text"
+            id="tweet-text"
+            placeholder="What are you humming about?"
+          ></textarea>
           <div class="action">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
-      </section>  
+      </section>
       <div class="tweet-container"></div>
-      <article class="tweet">
-        <header>
-          <div class="user-header">
-          <img src=/images/avatar.png>
-          <div class="user info">
-            <h1>Picasso</h1>
-          </div>
-          </div>
-          <div>
-            <h2>@theBlueMan</h2>
-          </div>
-        </header>
-        <div class="tweet-text">
-          <p>If I like it, I say it's mine; if don’t I say it's a fake. </p>
-        </div>
-      <footer>
-        <p>
-          10 days ago
-        </p>
-      </footer>
-    </div>  
     </main>
   </body>
 </html>
