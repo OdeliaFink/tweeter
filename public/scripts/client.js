@@ -32,8 +32,7 @@ $(document).ready(() => {
   $('.send-tweet').on('submit', (event) => {
     event.preventDefault();
     const text = $('#tweet-text').val();
-
-    if (text > 140) {
+    if (text.length > 140) {
       $('#error-box')
         .slideDown()
         .prepend($('<div>').addClass('error-message'))
