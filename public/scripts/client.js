@@ -33,16 +33,19 @@ $(document).ready(() => {
     event.preventDefault();
     const text = $('#tweet-text').val();
     if (text.length > 140) {
+      //if text is over character limit pop up error
       $('#error-box')
         .slideDown()
         .prepend($('<div>').addClass('error-message'))
         .text('Your tweet is too long, please remove some text!');
     } else if (text.length === 0) {
+      //if text is zero pop up error
       $('#error-box')
         .slideDown()
         .prepend($('<div>').addClass('error-message'))
         .text('Your tweet is empty, please enter text!');
     } else {
+      //if all else is correct then submit tweet
       $.ajax({
         url: '/tweets',
         method: 'POST',

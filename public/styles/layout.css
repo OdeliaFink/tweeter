@@ -16,6 +16,19 @@ html {
  * Global layout stuff
  */
 
+#main-header {
+  margin-top: 120px;
+  height: 400px;
+  width: 100%;
+  background-color: rgb(187, 187, 187);
+  background-color: #515251;
+  background-image: url('https://www.transparenttextures.com/patterns/candyhole.png');
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 body {
   color: #000000;
   background-color: #e9e9e9;

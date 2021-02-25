@@ -1,8 +1,8 @@
 .tweet-container {
-  border-style: solid;
+  border-style: none;
   background-color: #f4f1ec;
   width: auto;
-  margin: 50px auto;
+  margin: 30px auto;
 }
 
 .tweet header {
@@ -26,9 +26,14 @@
 .tweet {
   border-style: solid;
   padding: 10px;
+  margin: 15px auto;
 }
 
 .tweet:hover {
+  border: solid rgb(71, 114, 216) 4px;
+}
+
+.tweet-button:hover {
   border: solid rgb(71, 114, 216) 4px;
 }
 
