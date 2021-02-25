@@ -16,15 +16,33 @@ const tweetData = {
   created_at: 1461116232227,
 };
 
+const escape = function (str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 $(document).ready(() => {
+  $('#error-box').hide(); //hiding error on default
+
+  $('#tweet-text').on('input', function () {
+    $('#error-box').hide();
+  });
+
   $('.send-tweet').on('submit', (event) => {
     event.preventDefault();
-    const text = $('#tweet-text').val().length;
+    const text = $('#tweet-text').val();
 
     if (text > 140) {
-      alert('Content is too long!');
-    } else if (text === 0) {
-      alert('No text present!');
+      $('#error-box')
+        .slideDown()
+        .prepend($('<div>').addClass('error-message'))
+        .text('Your tweet is too long, please remove some text!');
+    } else if (text.length === 0) {
+      $('#error-box')
+        .slideDown()
+        .prepend($('<div>').addClass('error-message'))
+        .text('Your tweet is empty, please enter text!');
     } else {
       $.ajax({
         url: '/tweets',
@@ -35,6 +53,15 @@ $(document).ready(() => {
       });
     }
   });
+
+  const renderTweets = function (tweets) {
+    const container = $('.tweet-container').html('');
+    tweets.forEach((tweet) => {
+      const tweetElement = createTweetElement(tweet);
+      container.prepend(tweetElement);
+      console.log(tweetElement);
+    });
+  };
 
   const createTweetElement = function (tweetData) {
     let $tweet = $('<article>').addClass('tweet');
@@ -62,14 +89,6 @@ $(document).ready(() => {
     let result = $tweet.append(html);
     return result;
   };
-  const renderTweets = function (tweets) {
-    const container = $('.tweet-container').html('');
-    tweets.forEach((tweet) => {
-      const tweetElement = createTweetElement(tweet);
-      container.prepend(tweetElement);
-      console.log(tweetElement);
-    });
-  };
 
   const loadTweets = function () {
     $.ajax({
@@ -80,6 +99,7 @@ $(document).ready(() => {
       console.log(results);
       renderTweets(results);
     });
+    $('#tweet-text').val('');
   };
 
   loadTweets();
