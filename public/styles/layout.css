@@ -21,8 +21,8 @@ html {
   height: 400px;
   width: 100%;
   background-color: rgb(187, 187, 187);
-  background-color: #515251;
-  background-image: url('https://www.transparenttextures.com/patterns/candyhole.png');
+  background-color: rgb(216, 156, 42);
+  background-image: url('https://www.transparenttextures.com/patterns/asfalt.png');
 
   display: flex;
   flex-direction: column;

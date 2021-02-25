@@ -19,7 +19,6 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
     <!-- External JS -->
@@ -40,12 +39,16 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
+      <i
+        id="scroll-button"
+        class="far fa-arrow-alt-circle-down"
+        type="button"
+      ></i>
     </nav>
     <header id="main-header">
       <div>
         <img src="/images/profile-hex.png" />
       </div>
-      <br />
       <div>
         <h2>Odelia Finkelstein</h2>
       </div>
@@ -53,16 +56,15 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <div id="error-box">
-        <span>Error</span>
+        <div class="error-message">Error</div>
       </div>
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
+        <h2>What are you humming about?</h2>
         <form action="/tweets" class="send-tweet" method="POST">
           <label for="tweet-text"></label>
           <textarea
             name="text"
             id="tweet-text"
-            placeholder="What are you humming about?"
           ></textarea>
           <div class="action">
             <button type="submit" class="tweet-button">Tweet</button>
@@ -71,6 +73,7 @@
         </form>
       </section>
       <div class="tweet-container"></div>
+      </main>
     </main>
   </body>
 </html>
