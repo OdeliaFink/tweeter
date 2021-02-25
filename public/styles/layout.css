@@ -51,14 +51,24 @@ nav span {
   padding: 0% 5%;
 }
 
-/* for tablet-- add min and max */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  .layout-container {
+/* for tablet*/
+@media only screen and (min-width: 768px) {
+  body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
     background-color: #f4f1ec;
     padding-top: 10%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #f4f1ec;
   }
 }
