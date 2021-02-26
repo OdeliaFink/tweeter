@@ -23,6 +23,16 @@ const escape = function (str) {
 };
 
 $(document).ready(() => {
+  //to bring user to new-tweet form
+  $('#scroll-button').click(function () {
+    $([document.documentElement, document.body]).animate(
+      {
+        scrollTop: $('.new-tweet').offset().top,
+      },
+      0
+    );
+  });
+
   $('#error-box').hide(); //hiding error on default
 
   $('#tweet-text').on('input', function () {
