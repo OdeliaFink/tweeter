@@ -10,6 +10,7 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
+  padding-top: 10px;
 }
 
 /*
@@ -40,10 +41,6 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-nav span {
-  font-family: 'Bungee', sans-serif;
-}
-
 .container {
   background-color: #f4f1ec;
   width: 90%;
@@ -61,6 +58,10 @@ nav span {
     background-color: #f4f1ec;
     padding-top: 10%;
   }
+  #main-header {
+    margin-bottom: 15em;
+    margin-left: 2.5%;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -70,5 +71,8 @@ nav span {
     justify-content: space-between;
     align-items: flex-start;
     background-color: #f4f1ec;
+  }
+  #main-header {
+    margin-left: 20px;
   }
 }

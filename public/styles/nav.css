@@ -9,3 +9,15 @@ nav {
   position: fixed;
   top: 0;
 }
+
+nav span.logo {
+  font-family: 'Bungee', sans-serif;
+  font-size: xx-large;
+}
+
+nav div.write-a-tweet-container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
