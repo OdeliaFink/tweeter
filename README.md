@@ -13,6 +13,10 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final Product
 
+!["Example Tweet"](https://github.com/OdeliaFink/tweeter/blob/main/docs/example-tweet.png)
+!["Error When No Text"](https://github.com/OdeliaFink/tweeter/blob/main/docs/error-when-empty.png)
+!["Tweeter Page"](https://github.com/OdeliaFink/tweeter/blob/main/docs/tweeter-page.png)
+
 ## Dependencies
 
 - Express
