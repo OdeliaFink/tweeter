@@ -4,18 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const tweetData = {
-  user: {
-    name: 'Newton',
-    avatars: 'https://i.imgur.com/73hZDYK.png',
-    handle: '@SirIsaac',
-  },
-  content: {
-    text: 'If I have seen further it is by standing on the shoulders of giants',
-  },
-  created_at: 1461116232227,
-};
-
 const escape = function (str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
@@ -54,6 +42,8 @@ $(document).ready(() => {
         .slideDown()
         .prepend($('<div>').addClass('error-message'))
         .text('Your tweet is empty, please enter text!');
+    } else if (!text.trim()) {
+      $('#error-box').slideDown().text('Your tweet must be actual characters!');
     } else {
       //if all else is correct then submit tweet
       $.ajax({
@@ -62,22 +52,14 @@ $(document).ready(() => {
         data: $('form').serialize(),
       }).then((res) => {
         loadTweets();
+        $('.counter').val('140');
       });
     }
   });
 
-  const renderTweets = function (tweets) {
-    const container = $('.tweet-container').html('');
-    tweets.forEach((tweet) => {
-      const tweetElement = createTweetElement(tweet);
-      container.prepend(tweetElement);
-      console.log(tweetElement);
-    });
-  };
-
   const createTweetElement = function (tweetData) {
     let $tweet = $('<article>').addClass('tweet');
-
+    const time = timeago.format(tweetData.created_at);
     let html = `<header>
       <div class="user-info">
         <img src=${tweetData.user.avatars}> 
@@ -94,12 +76,26 @@ $(document).ready(() => {
     </div>
     <footer>
       <p>
-        ${tweetData.created_at}
+      ${time}
+      <span class="icons">
+      <i class="fas fa-flag"></i>
+      <i class="fas fa-retweet"></i>
+      <i class="fas fa-heart"></i>
+      <span>
         </p>
     </footer>
     `;
     let result = $tweet.append(html);
     return result;
+  };
+
+  const renderTweets = function (tweets) {
+    const container = $('.tweet-container').html('');
+    tweets.forEach((tweet) => {
+      const tweetElement = createTweetElement(tweet);
+      container.prepend(tweetElement);
+      console.log(tweetElement);
+    });
   };
 
   const loadTweets = function () {

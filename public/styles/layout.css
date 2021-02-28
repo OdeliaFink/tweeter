@@ -10,7 +10,6 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
-  padding-top: 10px;
 }
 
 /*
@@ -46,6 +45,10 @@ body {
   width: 90%;
   margin: auto;
   padding: 0% 5%;
+}
+
+.icons:hover {
+  color: rgb(216, 156, 42);
 }
 
 /* for tablet*/
